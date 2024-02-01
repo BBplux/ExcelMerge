@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Button_ExtractDiff" xml:space="preserve">
-    <value>只显示差异</value>
+    <value>提取</value>
   </data>
   <data name="Label_SkipFirstBlankRows" xml:space="preserve">
     <value>忽略第一个空白行</value>
@@ -388,7 +388,7 @@
     <value>基于行的日志格式</value>
   </data>
   <data name="MenuItem_Console" xml:space="preserve">
-    <value>日志</value>
+    <value>控制台</value>
   </data>
   <data name="MenuItem_View" xml:space="preserve">
     <value>窗口</value>
