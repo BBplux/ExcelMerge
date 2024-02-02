@@ -67,14 +67,13 @@ namespace ExcelMerge.GUI
 
         private ICommand CreateCommand(string[] args)
         {
-            if (CommandLine.Parser.Default.ParseArguments(args, CommandLineOption))
-            {
-                StoreOption();
-                CommandLineOption.ConvertToFullPath();
-                return CommandFactory.Create(CommandLineOption);
-            }
-
-            throw new Exceptions.ExcelMergeException(true, $"Invalid argument.\nargument:\n{string.Join(" ", args)}");
+            var result = CommandLine.Parser.Default.ParseArguments<CommandLineOption>(args);
+            if (result.Tag != CommandLine.ParserResultType.Parsed)
+                throw new Exceptions.ExcelMergeException(true, $"Invalid argument.\nargument:\n{string.Join(" ", args)}");
+            CommandLineOption = result.Value;
+            StoreOption();
+            CommandLineOption.ConvertToFullPath();
+            return CommandFactory.Create(CommandLineOption);
         }
 
         private void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
