@@ -76,7 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="SharpShell">
-      <Version>2.2.0</Version>
+      <Version>2.7.2</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
