@@ -1,235 +1,25 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9D45A825-0446-47AA-BEF2-C613B4DCFA66}</ProjectGuid>
+    <TargetFramework>net48</TargetFramework>
     <OutputType>WinExe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ExcelMerge.GUI</RootNamespace>
-    <AssemblyName>ExcelMerge.GUI</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <WarningLevel>4</WarningLevel>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <TargetFrameworkProfile />
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>app.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xaml">
-      <RequiredTargetFramework>4.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="WindowsBase" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Controls\PowerShellConsole.cs" />
-    <Compile Include="IgnoreEqualAttribute.cs" />
-    <Compile Include="Settings\ISetting.cs" />
-    <Compile Include="SerializableBindableBase.cs" />
-    <Compile Include="Settings\ExternalCommandCollection.cs" />
-    <Compile Include="Settings\FileSettingCollection.cs" />
-    <Compile Include="Settings\Setting.cs" />
-    <Compile Include="Settings\SettingCollection.cs" />
-    <Compile Include="Shell\PowerShellHost.cs" />
-    <Compile Include="Shell\PowerShellInvocation.cs" />
-    <Compile Include="ViewModels\SettingCollectionWindowViewModelBase.cs" />
-    <Compile Include="ViewModels\SettingEditorWindowViewModelBase.cs" />
-    <Compile Include="Views\DiffViewEvent\DiffViewEventArgs.cs" />
-    <Compile Include="Views\ProgressWindow.xaml.cs">
-      <DependentUpon>ProgressWindow.xaml</DependentUpon>
-    </Compile>
-    <Page Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="Behaviors\DragAcceptBehavior.cs" />
-    <Compile Include="Behaviors\DragAcceptDescription.cs" />
-    <Compile Include="Commands\CommandFactory.cs" />
-    <Compile Include="Commands\CommandLineOption.cs" />
-    <Compile Include="Commands\CommandType.cs" />
-    <Compile Include="Commands\DiffCommand.cs" />
-    <Compile Include="Commands\ICommand.cs" />
-    <Compile Include="Settings\FileSetting.cs" />
-    <Compile Include="ValueConverters\InverseBooleanConverter.cs" />
-    <Compile Include="ValueConverters\PercentageConverter.cs" />
-    <Compile Include="ViewModels\FileSettingEditorWindowViewModel.cs" />
-    <Compile Include="ViewModels\FileSettingsWindowViewModel.cs" />
-    <Compile Include="Views\DiffViewEvent\DiffViewEventDispatcher.cs" />
-    <Compile Include="Views\DiffViewEvent\DiffViewEventHandler.cs" />
-    <Compile Include="Exceptions\ExcelMergeException.cs" />
-    <Compile Include="Views\DiffViewEvent\DiffViewEventListener.cs" />
-    <Compile Include="Models\DiffGridModel.cs" />
-    <Compile Include="Models\DiffType.cs" />
-    <Compile Include="Settings\ApplicationSetting.cs" />
-    <Compile Include="Settings\EMEnvironmentValue.cs" />
-    <Compile Include="Settings\ExternalCommand.cs" />
-    <Compile Include="Styles\EMColor.cs" />
-    <Compile Include="ValueConverters\CultureNameConverter.cs" />
-    <Compile Include="ValueConverters\FileDialogParameterConverter.cs" />
-    <Compile Include="ValueConverters\FileDialogParameter.cs" />
-    <Compile Include="ValueConverters\MultiEmptyStringConverter.cs" />
-    <Compile Include="ValueConverters\MultiValueConverter.cs" />
-    <Compile Include="ViewModels\ExternalCommandEditorWindowViewModel.cs" />
-    <Compile Include="ViewModels\ExternalCommandsWindowViewModel.cs" />
-    <Compile Include="ViewModels\DiffViewModel.cs" />
-    <Compile Include="ViewModels\DiffExtractionSettingWindowViewModel.cs" />
-    <Compile Include="ViewModels\MainWindowViewModel.cs" />
-    <Compile Include="Views\ExternalCommandEditorWindow.xaml.cs">
-      <DependentUpon>ExternalCommandEditorWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ExternalCommandsWindow.xaml.cs">
-      <DependentUpon>ExternalCommandsWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\DiffView.xaml.cs">
-      <DependentUpon>DiffView.xaml</DependentUpon>
-    </Compile>
-    <Page Include="Themes\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\ExternalCommandEditorWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\ExternalCommandsWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\DiffExtractionSettingWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\FileSettingEditorWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\FileSettingsWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Views\DiffExtractionSettingWindow.xaml.cs">
-      <DependentUpon>DiffExtractionSettingWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FileSettingEditorWindow.xaml.cs">
-      <DependentUpon>FileSettingEditorWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FileSettingsWindow.xaml.cs">
-      <DependentUpon>FileSettingsWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="Views\DiffView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\ProgressWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.ja-JP.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.zh-CN.resx" />
-    <None Include="app.manifest" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ExcelMerge\ExcelMerge.csproj">
-      <Project>{bff4c33c-7395-4428-8587-aa22062e4a24}</Project>
-      <Name>ExcelMerge</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FastWpfGrid\FastWpfGrid\FastWpfGrid.csproj">
-      <Project>{e9d6f03c-bfb5-4d31-a15e-7f789b4bbcc3}</Project>
-      <Name>FastWpfGrid</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FastWpfGrid\WriteableBitmapEx\WriteableBitmapEx.Wpf.csproj">
-      <Project>{b0aa6a94-6784-4221-81f0-244a68c374c0}</Project>
-      <Name>WriteableBitmapEx.Wpf</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NetDiff\NetDiff\NetDiff.csproj">
-      <Project>{00a6267d-dde3-42cc-9c99-9166c334053e}</Project>
-      <Name>NetDiff</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SKCore\SKCore.Wpf\SKCore.Wpf.csproj">
-      <Project>{5314f788-9fd8-4099-a254-4452835bf69e}</Project>
-      <Name>SKCore.Wpf</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SKCore\SKCore\SKCore.csproj">
-      <Project>{86e52d96-25d9-4163-b063-3f0b1caa9ac8}</Project>
-      <Name>SKCore</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\ExcelMerge\ExcelMerge.csproj" />
+    <ProjectReference Include="..\FastWpfGrid\FastWpfGrid\FastWpfGrid.csproj" />
+    <ProjectReference Include="..\FastWpfGrid\WriteableBitmapEx\WriteableBitmapEx.Wpf.csproj" />
+    <ProjectReference Include="..\NetDiff\NetDiff\NetDiff.csproj" />
+    <ProjectReference Include="..\SKCore\SKCore.Wpf\SKCore.Wpf.csproj" />
+    <ProjectReference Include="..\SKCore\SKCore\SKCore.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="app.ico" />
@@ -241,12 +31,14 @@
     <PackageReference Include="Extended.Wpf.Toolkit">
       <Version>4.6.0</Version>
     </PackageReference>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="PowerShellStandard.Library">
       <Version>5.1.1</Version>
     </PackageReference>
     <PackageReference Include="Prism.Wpf">
       <Version>8.1.97</Version>
     </PackageReference>
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
     <PackageReference Include="Unity">
       <Version>5.11.10</Version>
     </PackageReference>
@@ -254,12 +46,8 @@
       <Version>15.1.0</Version>
     </PackageReference>
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <ItemGroup>
+    <ApplicationDefinition Remove="App.xaml" />
+    <Page Include="App.xaml" />
+  </ItemGroup>
 </Project>
