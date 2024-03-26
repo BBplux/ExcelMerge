@@ -13,9 +13,7 @@
     <ProjectReference Include="..\SKCore\SKCore\SKCore.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="NPOI">
-      <Version>2.6.2</Version>
-    </PackageReference>
+    <PackageReference Include="NPOI" Version="2.7.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
   </ItemGroup>
 </Project>

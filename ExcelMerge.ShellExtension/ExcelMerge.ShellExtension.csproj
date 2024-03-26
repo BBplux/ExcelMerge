@@ -23,9 +23,7 @@
     <None Include="ExcelMergeShellExtension.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="SharpShell">
-      <Version>2.7.2</Version>
-    </PackageReference>
+    <PackageReference Include="SharpShell" Version="2.7.2" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
   </ItemGroup>
 </Project>
